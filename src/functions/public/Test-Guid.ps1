@@ -39,8 +39,6 @@
         [string] $String
     )
 
-    [regex]$guidRegex = '(?im)^[{(]?[0-9A-F]{8}[-]?(?:[0-9A-F]{4}[-]?){3}[0-9A-F]{12}[)}]?$'
-
     # Check GUID against regex
-    $String -match $guidRegex
+    $String -match $script:GUIDPattern
 }

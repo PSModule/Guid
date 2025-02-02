@@ -8,6 +8,21 @@
             $GUID = 'Test this 123e4567-e85440000' | Search-Guid
             $GUID | Should -BeNullOrEmpty
         }
+        It 'Search-Guid finds multiple GUIDs from a string' {
+            $multi = @'
+.EXAMPLE
+'The ID is 550e8400-e29b-41d4-a716-446655440000' | Search-Guid
+
+Extracts and returns the GUID `550e8400-e29b-41d4-a716-446655440000` from the input string.
+
+.EXAMPLE
+Search-Guid -String 'GUID: 123e4567-e89b-12d3-a456-426614174000'
+
+Returns the extracted GUID `123e4567-e89b-12d3-a456-426614174000`.
+'@
+
+            $multi | Search-GUID | Should -HaveCount 4
+        }
     }
 
     Context 'Function: Search-Guid' {
