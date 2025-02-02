@@ -23,6 +23,27 @@ Returns the extracted GUID `123e4567-e89b-12d3-a456-426614174000`.
 
             $multi | Search-GUID | Should -HaveCount 4
         }
+        It 'Search-Guid finds GUIDs in an array of strings' {
+            $multi = @'
+.EXAMPLE
+'The ID is 550e8400-e29b-41d4-a716-446655440000' | Search-Guid
+
+Extracts and returns the GUID `550e8400-e29b-41d4-a716-446655440000` from the input string.
+
+.EXAMPLE
+Search-Guid -String 'GUID: 123e4567-e89b-12d3-a456-426614174000'
+
+Returns the extracted GUID `123e4567-e89b-12d3-a456-426614174000`.
+'@
+            $array = @(
+                'Test this 123e4567-e89b-12d3-a456-426655440000',
+                'Test this 123e4567-e85440000',
+                $multi,
+                'Test this f1489776-27c5-4dce-937f-360eb028b225'
+            )
+            $GUID = $array | Search-Guid
+            $GUID | Should -HaveCount 6
+        }
     }
 
     Context 'Function: Search-Guid' {
