@@ -1,69 +1,70 @@
-# {{ NAME }}
+# GUID
 
-{{ DESCRIPTION }}
+A PowerShell module that extends the native capabilities for working with Globally Unique Identifiers (GUIDs).
 
 ## Prerequisites
 
-This uses the following external resources:
-- The [PSModule framework](https://github.com/PSModule) for building, testing and publishing the module.
+This module uses the following external resources:
+- The [PSModule framework](https://github.com/PSModule) for building, testing, and publishing the module.
 
 ## Installation
 
-To install the module from the PowerShell Gallery, you can use the following command:
+To install the module from the PowerShell Gallery, run the following commands:
 
 ```powershell
-Install-PSResource -Name {{ NAME }}
-Import-Module -Name {{ NAME }}
+Install-PSResource -Name GUID
+Import-Module -Name GUID
 ```
 
 ## Usage
 
-Here is a list of example that are typical use cases for the module.
+Here are some typical use cases for the GUID module.
 
-### Example 1: Greet an entity
+### Example 1: Test if a string is a GUID
 
-Provide examples for typical commands that a user would like to do with the module.
-
-```powershell
-Greet-Entity -Name 'World'
-Hello, World!
-```
-
-### Example 2
-
-Provide examples for typical commands that a user would like to do with the module.
+Check if a string is a valid GUID using:
 
 ```powershell
-Import-Module -Name PSModuleTemplate
+Test-Guid -Guid 'd85b1407-351d-4694-9392-03acc5870eb1'
+'d85b1407-351d-4694-9392-03acc5870eb1' | Test-Guid
+'d85b1407-351d-4694-9392-03acc5870eb1' | IsGuid
 ```
 
-### Find more examples
+This command returns `True` if the provided string is a valid GUID; otherwise, it returns `False`.
 
-To find more examples of how to use the module, please refer to the [examples](examples) folder.
+### Example 2: Find a GUID in a string
 
-Alternatively, you can use the Get-Command -Module 'This module' to find more commands that are available in the module.
-To find examples of each of the commands you can use Get-Help -Examples 'CommandName'.
+Extract a GUID from a string using:
 
-## Documentation
+```powershell
+Search-Guid -Text "The GUID is d85b1407-351d-4694-9392-03acc5870eb1"
+```
 
-Link to further documentation if available, or describe where in the repository users can find more detailed documentation about
-the module's functions and features.
+This command returns the GUID found in the provided string.
+
+### Find More Examples
+
+For additional usage examples, please refer to the [examples](examples) folder. You can also list all available commands with:
+
+```powershell
+Get-Command -Module GUID
+```
+
+And view detailed help for each command (for instance, for New-GuidPlus) by running:
+
+```powershell
+Get-Help -Examples <command>
+```
 
 ## Contributing
 
-Coder or not, you can contribute to the project! We welcome all contributions.
+Contributions are welcome—whether you're reporting an issue, suggesting improvements, or submitting new code!
 
 ### For Users
 
-If you don't code, you still sit on valuable information that can make this project even better. If you experience that the
-product does unexpected things, throw errors or is missing functionality, you can help by submitting bugs and feature requests.
-Please see the issues tab on this project and submit a new issue that matches your needs.
+If you encounter any bugs, unexpected behavior, or missing functionality, please open an issue on this repository. Your feedback is valuable.
 
 ### For Developers
 
-If you do code, we'd love to have your contributions. Please read the [Contribution guidelines](CONTRIBUTING.md) for more information.
-You can either help by picking up an existing issue or submit a new one if you have an idea for a new feature or improvement.
-
-## Acknowledgements
-
-Here is a list of people and projects that helped this project in some way.
+If you'd like to contribute code or enhancements, please review the [Contribution Guidelines](CONTRIBUTING.md) first. You can start by addressing
+an existing issue or proposing a new feature.

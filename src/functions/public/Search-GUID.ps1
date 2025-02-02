@@ -1,18 +1,30 @@
-﻿filter Search-GUID {
+﻿filter Search-Guid {
     <#
         .SYNOPSIS
-        Search a string for a GUID
+        Extracts a GUID from a given string.
 
         .DESCRIPTION
-        Search a string for a GUID
+        This function searches for a GUID within the provided string and returns it.
+        The function accepts input from the pipeline and processes each string to extract GUIDs.
 
         .EXAMPLE
-        '123e4567-e89b-12d3-a456-426655440000' | Search-GUID
+        "The ID is 550e8400-e29b-41d4-a716-446655440000" | Search-Guid
+
+        Extracts and returns the GUID `550e8400-e29b-41d4-a716-446655440000` from the input string.
+
+        .EXAMPLE
+        Search-Guid -String "GUID: 123e4567-e89b-12d3-a456-426614174000"
+
+        Returns the extracted GUID `123e4567-e89b-12d3-a456-426614174000`.
+
+        .LINK
+        https://psmodule.io/GUID/Functions/Search-Guid/
     #>
-    [Cmdletbinding()]
+    [CmdletBinding()]
+    [Alias('Find-Guid')]
     [OutputType([guid])]
     param(
-        # The string to search
+        # The string containing a potential GUID.
         [Parameter(
             Mandatory,
             ValueFromPipeline,
