@@ -1,1 +1,2 @@
-﻿[regex]$script:GUIDPattern = '[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}'
+﻿[regex]$script:HexPattern = '[0-9a-fA-F]'
+[regex]$script:GUIDPattern = "$script:HexPattern{8}-$script:HexPattern{4}-$script:HexPattern{4}-$script:HexPattern{4}-$script:HexPattern{12}"
