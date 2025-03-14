@@ -1,6 +1,5 @@
 # GUID
 
-
 A PowerShell module that extends the native capabilities for working with Globally Unique Identifiers (GUIDs).
 
 ## Prerequisites
