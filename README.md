@@ -1,25 +1,25 @@
-# Guid
+# GUID
 
-Guid is a PowerShell module for working with GUID values.
+GUID is a PowerShell module for working with GUID values.
 
 ## Installation
 
 Install the module from the PowerShell Gallery:
 
 ```powershell
-Install-PSResource -Name Guid
-Import-Module -Name Guid
+Install-PSResource -Name GUID
+Import-Module -Name GUID
 ```
 
 ## Documentation
 
-Documentation is published at [psmodule.io/Guid](https://psmodule.io/Guid/).
+Documentation is published at [psmodule.io/GUID](https://psmodule.io/GUID/).
 
 Use PowerShell help and command discovery for module details:
 
 ```powershell
-Get-Command -Module Guid
-Get-Help <CommandName> -Examples
+Get-Command -Module GUID
+Get-Help Test-Guid -Examples
 ```
 
 ## Contributing
