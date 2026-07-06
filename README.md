@@ -13,7 +13,7 @@ Import-Module -Name GUID
 
 ## Documentation
 
-Documentation is published at [psmodule.io/GUID](https://psmodule.io/GUID/).
+Documentation is available through PowerShell help and command discovery. You can also browse related module documentation at [psmodule.io](https://psmodule.io/).
 
 Use PowerShell help and command discovery for module details:
 
