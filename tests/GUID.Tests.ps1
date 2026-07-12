@@ -1,4 +1,6 @@
-﻿Describe 'Functions' {
+﻿#Requires -Modules @{ ModuleName = 'Pester'; ModuleVersion = '6.0.0'; MaximumVersion = '6.*' }
+
+Describe 'Functions' {
     Context 'Function: Search-Guid' {
         It 'Search-Guid finds a GUID from a string' {
             $GUID = 'Test this 123e4567-e89b-12d3-a456-426655440000' | Search-Guid
